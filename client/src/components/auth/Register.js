@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios';
 
  class Register extends Component {
     constructor(){
@@ -19,14 +20,16 @@ onChange(e){
     this.setState({[e.target.name]:e.target.value});
 }
 onSubmit(e){
-    e.preventDefualt();
+    e.preventDefault();
     const newUser = {
         name:this.state.name,
         email:this.state.email,
         password:this.state.password,
         password2:this.state.password2
     }
-    console.log(newUser);
+    axios.post('/api/users/register',newUser)
+    .then(res=>console.log(res.data))
+    .catch(err=>console.log(err.response.data))
 
 
 
