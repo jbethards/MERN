@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
-import {propTypes} from 'prop-types';
+import {PropTypes} from 'prop-types';
 import {connect} from 'react-redux';
 class Landing extends Component {
   componentDidMount(){
@@ -32,7 +32,7 @@ class Landing extends Component {
   }
 }
 Landing.propTypes={
-  auth:propTypes.object.isRequired
+  auth:PropTypes.object.isRequired
 }
 const mapStateToProps=(state)=>({
   auth:state.auth
