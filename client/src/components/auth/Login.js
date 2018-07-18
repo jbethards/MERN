@@ -68,6 +68,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
               placeholder="Password"
               type="password"
               name="password"
+              value={this.state.password}
               onChange={this.onChange}
               error={errors.password}
               />

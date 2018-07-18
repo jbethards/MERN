@@ -76,6 +76,7 @@ onSubmit(e){
               placeholder="Password"
               type="password"
               name="password"
+              value={this.state.password}
               onChange={this.onChange}
               error={errors.password}
               />
@@ -83,6 +84,7 @@ onSubmit(e){
               placeholder=" Confirm Password"
               type="password"
               name="password2"
+              value={this.state.password2}
               onChange={this.onChange}
               error={errors.password2}
               />
