@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; 
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
@@ -14,7 +14,7 @@ import { Provider } from 'react-redux';
 import {setCurrentUser, logoutUser} from './actions/authActions';
 import './App.css';
 import { clearCurrentProfile } from './actions/profileActions';
-
+import PrivateRoute from './components/common/privateRoute';
 
 //check for token
 if(localStorage.jwtToken){
@@ -48,8 +48,9 @@ class App extends Component {
           <div className="container">
             <Route exact path="/register" component={Register}/>
             <Route exact path="/login" component={Login}/>
-            <Route exact path="/dashboard" component={Dashboard}/>
-            
+            <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+            </Switch>
           </div>
           <Footer/>
         </div>

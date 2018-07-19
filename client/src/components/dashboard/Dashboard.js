@@ -12,7 +12,7 @@ class Dashboard extends Component {
     const {user} = this.props.auth;
     const{profile,loading}=this.props.profile;
     let dashboardContent;
-    if(profile==null||loading){
+    if(profile===null||loading){
       dashboardContent = <Spinner/>
     }
     else{
