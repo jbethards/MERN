@@ -4,6 +4,7 @@ import {Link } from 'react-router-dom'
 import {connect} from 'react-redux';
 import { getCurrentProfile } from '../../actions/profileActions';
 import Spinner from '../common/spinner';
+import className from 'classnames';
 class Dashboard extends Component {
     componentDidMount(){
         this.props.getCurrentProfile();
@@ -35,9 +36,9 @@ class Dashboard extends Component {
         }
     }
     return (
-      <div classname="dashboard">
-        <div classname="container">
-          <div classname="row">
+      <div className="dashboard">
+        <div className="container">
+          <div className="row">
           <div className="col-md-12">
           <h1 className="display4">Dashboard</h1>
           {dashboardContent}

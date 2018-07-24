@@ -35,7 +35,7 @@ router.post('/register',(req,res)=>{
         else{
             const avatar = gravatar.url(req.body.email,{
                 s:'200', 
-                d:'5555',
+                d:'mm',
                 r:'pg'
                 
             });
